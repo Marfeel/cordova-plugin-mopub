@@ -62,18 +62,17 @@
      
   <!-- ios -->
   <platform name="ios">
-    <pods-config ios-min-version="9.0" uses-frameworks="true"/>
-    <pod id="mopub-ios-sdk" />
-
     <config-file target="config.xml" parent="/*">
       <feature name="MoPub">
         <param name="ios-package" value="MoPubPlugin" />
       </feature>
     </config-file>
-
     <header-file src="src/ios/MoPubPlugin.h"/>
     <source-file src="src/ios/MoPubPlugin.m"/>
-
+    <framework src="src/ios/MoPub.framework" custom="true"/>
+    <resource-file src="src/ios/MoPub.framework/Resources/MPCloseButtonX.png"/>
+    <resource-file src="src/ios/MoPub.framework/Resources/MPCloseButtonX@2x.png"/>
+    <resource-file src="src/ios/MoPub.framework/Resources/MRAID.bundle"/>
     <framework src="AdSupport.framework"/>
     <framework src="CoreGraphics.framework"/>
     <framework src="CoreLocation.framework"/>
@@ -88,5 +87,4 @@
     <framework src="SystemConfiguration.framework"/>
     <framework src="UIKit.framework"/>
   </platform>
-
 </plugin>
